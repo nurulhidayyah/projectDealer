@@ -1,0 +1,25 @@
+.card1{
+    box-shadow: 1px 1px 10px rgb(2, 2, 2);
+    border-radius: 20px;
+}
+
+.col-md{
+    margin-top: 50px;
+}
+
+.border{
+    border-radius: 20px;
+}
+
+.card2{
+    border-radius: 20px;
+    border-top: 10px;
+}
+
+.btn-danger{
+    background-color: #D11212 !important;
+}
+
+img.img-fluid {
+    width: 380px !important;
+}

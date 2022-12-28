@@ -115,50 +115,38 @@
                         tahun 2022</h5>
                 </div>
 
-                <div class="row justify-content-center mt-5">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/brio.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <strong>
-                                    <h3 class="card-title1 text-dark">BRIO</h3>
-                                </strong>
-                                <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
-                                    class="btn btn-primary bg-danger d-block">Harga Rp.200.000.000</a>
+                @if ($home->count())
+                    <div class="row justify-content-center mt-5">
+                        @foreach ($home as $homes)
+                            <div class="col-md-4 mb-3">
+                                <div class="card">
+                                    @if ($homes->image)
+                                        <img src="img/{{ $homes->image }}" class="img-fluid" alt="{{ $homes->title }}">
+                                    @else
+                                        <img src="img/blank.jpg" class="card-img-top" class="card-img-top"
+                                            alt="{{ $homes->title }}">
+                                    @endif
+                                    <div class="card-body">
+                                        <strong>
+                                            <h3 class="card-title1 text-dark fw-bold fs-2">{{ $homes->title }}</h3>
+                                        </strong>
+                                        <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
+                                            class="btn btn-danger d-block p-4 fw-bold fs-4">Harga Rp.{{ $homes->harga }}</a>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        @endforeach
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/brio.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <strong>
-                                    <h3 class="card-title1 text-dark">BRIO</h3>
-                                </strong>
-                                <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
-                                    class="btn btn-primary bg-danger">Harga Rp.200.000.000</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="img/brio.png" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <strong>
-                                    <h3 class="card-title1 text-dark">BRIO</h3>
-                                </strong>
-                                <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
-                                    class="btn btn-primary bg-danger">Harga Rp.200.000.000</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @else
+                    <p class="text-center fs-4">No Post Found.</p>
+                @endif
 
                 <div class="text-button mt-4">
                     <form action="https://drive.google.com/file/d/1FvqMhnJ6SVGLD5bFSTiomKOpfRW4DuOH/view">
                         <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
                     </form>
                 </div>
+
             </div>
         </div>
         </div>
@@ -166,9 +154,24 @@
     </section>
 
     <!-- section 3 -->
-
     <section class="bg-secondary mt-5 p-1">
-        <div class="container">
+
+        <div class="row justify-content-center">
+            <div class="mt-5 border bg-light bg-gradient text-center col-md-4 ">
+                <h1 class="fs-1 fw-bold">GALERI PELANGGAN</h1>
+            </div>
+        </div>
+        <div class="row text-center text-light mt-4">
+            <h1 class="fs-3">Real Testimoni Pelanggan AutoSerang.com</h1>
+        </div>
+
+        <!-- Galeri Pelanggan-->
+
+
+
+
+
+        <div class="container p-5">
             <div class="card-group">
                 <div class="card">
                     <div class="card-body">
@@ -198,7 +201,7 @@
                             href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com">Hubungi</a>
                     </div>
                 </div>
-                <div class="card">
+                <div class="card" id=contact>
                     <div class="card-body">
                         <h3 class="card-title text-center" bold><Strong></Strong>LOKASI</Strong></h3>
                         <div class="map-responsive">
