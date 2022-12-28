@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
     <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="/">
             <img src="img/logo_honda.png" alt="" width="50" height="50" class="me-2">
             <strong>HONDA</strong>
         </a>
@@ -12,13 +12,13 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="login.html">Beranda</a>
+                    <a class="nav-link active" aria-current="page" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galeri Pelanggan</a>
+                    <a class="nav-link" href="/galery">Galeri Pelanggan</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Kontak</a>
+                    <a class="nav-link" href="#contact">Kontak</a>
                 </li>
             </ul>
         </div>
