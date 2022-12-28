@@ -15,3 +15,7 @@
     border-radius: 20px;
     border-top: 10px;
 }
+
+.btn-danger{
+    background-color: #D11212 !important;
+}
