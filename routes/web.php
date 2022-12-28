@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\GaleryController;
+use App\Http\Controllers\MobilController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MobilController::class, 'index']);
+
+Route::get('/galery', [GaleryController::class, 'index']);
