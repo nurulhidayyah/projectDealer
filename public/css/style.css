@@ -1,25 +1,46 @@
-.card1{
+.card1 {
     box-shadow: 1px 1px 10px rgb(2, 2, 2);
     border-radius: 20px;
 }
 
-.col-md{
+.col-md {
     margin-top: 50px;
 }
 
-.border{
+.border {
     border-radius: 20px;
 }
 
-.card2{
+.card2 {
     border-radius: 20px;
     border-top: 10px;
 }
 
-.btn-danger{
+.btn-danger {
     background-color: #D11212 !important;
 }
 
 img.img-fluid {
     width: 380px !important;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.form-registration input{
+    border-radius: 0;
+    margin-bottom: -1px;
 }

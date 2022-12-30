@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
-        User::factory(5)->create();
+        // User::factory(5)->create();
 
         Mobil::create([
             "title" => "Brio",

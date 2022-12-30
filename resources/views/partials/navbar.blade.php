@@ -12,14 +12,35 @@
 
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Beranda</a>
+                    <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/galery">Galeri Pelanggan</a>
+                    <a class="nav-link {{ Request::is('galery') ? 'active' : '' }}" href="/galery">Galeri Pelanggan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Kontak</a>
                 </li>
+            </ul>
+
+            <ul class="navbar-nav">
+                @auth
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Welcome back, {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-layout-text-sidebar-reverse"></i> My Dashboard</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <form action="/logout" method="post">
+                                @csrf
+                                <button class="dropdown-item"><i class="bi bi-box-arrow-right"></i> Logout</a></li></button>
+                            </form>
+                        </ul>
+                    </li>
+                @endauth
             </ul>
         </div>
     </div>
