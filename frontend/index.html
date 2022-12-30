@@ -10,12 +10,22 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/owl.carousel.min.css">
+    <link rel="stylesheet" href="style/owl.theme.default.css">
+    <link rel="stylesheet" href="style/style.css">
+   
+    <script type="text/javascript" src="js/style.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script src="js/owl.carousel.js"></script>
+  
+   
 
-  <title>Hello, world!</title>
+
+  <title>dealer</title>
 </head>
 
 <body>
+  
 
   <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
@@ -55,7 +65,7 @@
       <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
         aria-label="Slide 3"></button>
     </div>
-    <div class="carousel-inner">
+    <div class="carousel-inner ">
       <div class="carousel-item active">
         <img src="img/bghonda.jpg" class="d-block w-100" alt="...">
       </div>
@@ -148,13 +158,13 @@
     <div class="row">
       <div class="text-center">
         <div class="p-4 border bg-secondary bg-gradient text-center">
-          <h1>PRODUCT & PRICE 2022</h1>
+          <h1>PRODUCT & PRICE 2023</h1>
         </div>
 
         <div class="text mt-4">
           <h5><strong>*Keterangan</strong>: Harga tertera adalah harga dengan tipe terendah. Harga tertera adalah
-            harga OTR Jakarta dan kepemilikan mobil pertama. Harga yang tertera adalah harga OTR untuk nomor rangka
-            tahun 2022</h5>
+            harga OTR Banten dan kepemilikan mobil pertama. Harga yang tertera adalah harga OTR untuk nomor rangka
+            tahun 2023</h5>
         </div>
 
         <div class="row justify-content-center mt-5">
@@ -292,31 +302,48 @@
     <h1 class="fs-3">Real Testimoni Pelanggan AutoSerang.com</h1>
   </div>
 
+
   <!-- Galeri Pelanggan-->
-      
   
-  <div id="carouselExampleControls " class="carousel slide col-md-2 " data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/s1.jpeg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="img/s2.jpeg" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="..." class="d-block w-100" alt="...">
-      </div>
+    
+  <div class="container mt-4 mb-5">
+    <div class="owl-carousel owl-theme">
+        <div class="item"><img src="img/s1.jpeg"></div>
+        <div class="item"><img src="img/s2.jpeg"></div>
+        <div class="item"><img src="img/s1.jpeg"></div>
+        <div class="item"><img src="img/s2.jpeg"></div>
+        <div class="item"><img src="img/s1.jpeg"></div>
+        <div class="item"><img src="img/s2.jpeg"></div>
+
+        
+        
+       
     </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
-  </div>
+</div>
+<script>
+  $('.owl-carousel').owlCarousel({
+    loop:true,
+    margin:10,
+    nav:true,
+    responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:3
+        },
+        1000:{
+            items:5
+        }
+    }
+})
+</script>
+</section>
   
+   <!-- Galeri Pelanggan-->
+  
+  
+<section class="bg-dark bg-gradient mt-5">
 
     <div class="container p-5">
       <div class="card-group">
@@ -366,9 +393,25 @@
   </section>
 
 
+  <footer>
+    <div class="footer text-center">
+       <div class="copyright">
+          <div class="container">
+             <div class="row">
+                <div class="col-md-8 offset-md-2"> 
+                  <span>Created By</span> <a href="#">©The Bungsu Freelance</a>
+                </div>
+             </div>
+          </div>
+       </div>
+    </div>
+ </footer>
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+
+   
 
 </body>
 
