@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Storage;
 
 class DashboardUserController extends Controller
 {
@@ -72,6 +73,7 @@ class DashboardUserController extends Controller
     {
         $rules = [
             'name' => 'required|max:255',
+            'brosur' => 'file',
             'password' => 'required|min:5|max:255'
         ];
         if ($request->username != $user->username) {
@@ -82,6 +84,14 @@ class DashboardUserController extends Controller
         }
 
         $validatedData = $request->validate($rules);
+
+        if ($request->file('brosur')) {
+            if($request->oldBrosur){
+                Storage::delete($request->oldBrosur);
+            }
+            $validatedData['brosur'] = $request->file('brosur')->store('car-brosur');
+        }
+
         $validatedData['password'] = Hash::make($validatedData['password']);
 
         User::where('id', $user->id)

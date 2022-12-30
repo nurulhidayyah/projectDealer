@@ -34,6 +34,7 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/dashboard', function (){
     return view('dashboard.index');
 })->middleware('auth');
+
 Route::resource('/dashboard/user', DashboardUserController::class)->middleware('auth');
 
 Route::get('/dashboard/cars/checkSlug', [DashboardMobilController::class, 'checkSlug'])->middleware('auth');

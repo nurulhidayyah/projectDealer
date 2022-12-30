@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'admin',
             'username' => 'admin',
             'email' => 'admin@gmail.com',
-            'password' => 'admin'
+            'password' => bcrypt('admin')
         ]);
 
         // Mobil::create([

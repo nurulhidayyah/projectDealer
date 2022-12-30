@@ -5,7 +5,7 @@
         <h1 class="h2">Welcome back, {{ auth()->user()->name }}</h1>
     </div>
     <div class="col-lg-8">
-        <form action="/dashboard/user/{{ auth()->user()->id }}" method="post" class="mb-5" enctype="multipart/form-data">
+        <form action="/dashboard/user/{{ auth()->user()->id }}" method="post" enctype="multipart/form-data" class="mb-2">
             @method('put')
             @csrf
             <div class="mb-3">
@@ -39,6 +39,16 @@
                 @enderror
             </div>
             <div class="mb-3">
+                <label for="brosur" class="form-label">Update Brosur</label>
+                <input type="hidden" class="form-control" name="oldBrosur" value="{{ auth()->user()->brosur }}">
+                <input class="form-control @error('brosur') is-invalid @enderror" type="file" id="brosur" name="brosur" onchange="previewbrosur()">
+                @error('brosur')
+                    <div class="invalid-feedback">
+                        {{ $message }}
+                    </div>
+                @enderror
+            </div>
+            <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
                     name="password" value="{{ old('password') }}" required>
@@ -49,6 +59,10 @@
                 @enderror
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
+        </form>
+        <form target="blank" action="{{ asset('storage/' . auth()->user()->brosur) }}" class="mb-5">
+            @csrf
+            <button type="submit" class="btn btn-outline-success">Lihat Brosur</button>
         </form>
     </div>
 @endsection

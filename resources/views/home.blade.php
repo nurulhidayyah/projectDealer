@@ -146,9 +146,13 @@
                 @endif
 
                 <div class="text-button mt-4">
-                    <form action="https://drive.google.com/file/d/1FvqMhnJ6SVGLD5bFSTiomKOpfRW4DuOH/view">
+                    <form target="blank" action="{{ asset('storage/' . auth()->user()->brosur) }}">
+                        @csrf
                         <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
                     </form>
+                    {{-- <form action="https://drive.google.com/file/d/1FvqMhnJ6SVGLD5bFSTiomKOpfRW4DuOH/view">
+                        <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
+                    </form> --}}
                 </div>
 
             </div>
