@@ -54,14 +54,14 @@
                         <h5>Bagaimana cara <strong>Claim Asuransi</strong> dan berapa biaya perawatan mobil ? <br><br><br>
                         </h5>
 
-                        <h4> <strong>hondamobilserangbanten.com Solusinya </strong></h4>
+                        <h4> <strong>HondaSerang.com Solusinya </strong></h4>
 
                         <!-- card 1 -->
 
                         <div class="row row-cols-1  mt-5 row-cols-md-4 g-3">
                             <div class="col">
                                 <div class="card1">
-                                    <img src="img/rp.png" class="card-img-top" alt="...">
+                                    <img src="img/transaksi.png" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title1">Pembiayaan Bisa Melalui Tunai/Kredit</h5>
 
@@ -70,7 +70,7 @@
                             </div>
                             <div class="col">
                                 <div class="card1">
-                                    <img src="img/paper.png" class="card-img-top" alt="...">
+                                    <img src="img/service.png" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Dibantu Approval Tanpa Biaya Tambahan</h5>
                                     </div>
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col">
                                 <div class="card1">
-                                    <img src="img/price-tag.png" class="card-img-top" alt="...">
+                                    <img src="img//kredit.png" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">DP Murah & Angsuran Ringan</h5>
                                     </div>
@@ -86,7 +86,7 @@
                             </div>
                             <div class="col">
                                 <div class="card1">
-                                    <img src="img/notepad.png" class="card-img-top" alt="...">
+                                    <img src="img/note.png" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">Pelayanan Maksimal Sampai Selesai</h5>
 
@@ -180,7 +180,7 @@
         <div class="container mt-4 mb-5">
             <div class="owl-carousel galleries owl-theme">
                 @foreach ($galleries as $gallery)
-                    <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}"></div>
+                    <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}" class="img-thumbnail" style="width: 300px"></div>
                 @endforeach
             </div>
         </div>
