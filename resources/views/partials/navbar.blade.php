@@ -15,7 +15,7 @@
                     <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Beranda</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ Request::is('galery') ? 'active' : '' }}" href="/galery">Galeri Pelanggan</a>
+                    <a class="nav-link" href="#gallery">Galeri Pelanggan</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#contact">Kontak</a>

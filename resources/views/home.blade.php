@@ -163,7 +163,7 @@
     </section>
 
     <!-- section 3 -->
-    <section class="bg-secondary mt-5 p-1">
+    <section class="bg-secondary mt-5 p-1" id="gallery">
 
         <div class="row justify-content-center">
             <div class="mt-5 border bg-light bg-gradient text-center col-md-4 ">
