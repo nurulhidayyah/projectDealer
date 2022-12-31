@@ -1,3 +1,5 @@
+{{-- <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.default.css"> --}}
 @extends('layouts.main')
 
 @section('container')
@@ -52,7 +54,7 @@
                         <h5>Bagaimana cara <strong>Claim Asuransi</strong> dan berapa biaya perawatan mobil ? <br><br><br>
                         </h5>
 
-                        <h4> <strong>HondaSerang.com Solusinya </strong></h4>
+                        <h4> <strong>hondamobilserangbanten.com Solusinya </strong></h4>
 
                         <!-- card 1 -->
 
@@ -105,14 +107,14 @@
         <div class="row">
             <div class="text-center">
                 <div class="p-4 border bg-secondary bg-gradient text-center">
-                    <h1>PRODUCT & PRICE 2022</h1>
+                    <h1>PRODUCT & PRICE 2023</h1>
                 </div>
 
                 <div class="text mt-4">
                     <h5><strong>*Keterangan</strong>: Harga tertera adalah harga dengan tipe terendah. Harga tertera adalah
-                        harga OTR Jakarta dan kepemilikan mobil pertama. Harga yang tertera adalah harga OTR untuk nomor
+                        harga OTR Banten dan kepemilikan mobil pertama. Harga yang tertera adalah harga OTR untuk nomor
                         rangka
-                        tahun 2022</h5>
+                        tahun 2023</h5>
                 </div>
 
                 @if ($home->count())
@@ -134,7 +136,8 @@
                                             <h3 class="card-title1 text-dark fw-bold fs-2">{{ $homes->title }}</h3>
                                         </strong>
                                         <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
-                                            class="btn btn-danger d-block py-4 px-5 fw-bold fs-4 mt-auto" style="width: 100%" target="blank">Harga
+                                            class="btn btn-danger d-block py-4 px-5 fw-bold fs-4 mt-auto"
+                                            style="width: 100%" target="blank">Harga
                                             Rp {{ $homes->harga }}</a>
                                     </div>
                                 </div>
@@ -168,12 +171,41 @@
             </div>
         </div>
         <div class="row text-center text-light mt-4">
-            <h1 class="fs-3">Real Testimoni Pelanggan AutoSerang.com</h1>
+            <h1 class="fs-3">Real Testimoni Pelanggan hondamobilserangbanten.com</h1>
         </div>
 
         <!-- Galeri Pelanggan-->
 
-        @include('partials.contact')
 
+        <div class="container mt-4 mb-5">
+            <div class="owl-carousel galleries owl-theme">
+                @foreach ($galleries as $gallery)
+                    <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}"></div>
+                @endforeach
+            </div>
+        </div>
+        <script>
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 3
+                    },
+                    1000: {
+                        items: 5
+                    }
+                }
+            })
+        </script>
+    </section>
+
+    <!-- Galeri Pelanggan-->
+    <section class="bg-dark bg-gradient mt-5">
+        @include('partials.contact')
     </section>
 @endsection

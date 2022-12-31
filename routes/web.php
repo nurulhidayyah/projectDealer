@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DashboardGalleryController;
 use App\Http\Controllers\DashboardMobilController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\GaleryController;
@@ -39,3 +40,5 @@ Route::resource('/dashboard/user', DashboardUserController::class)->middleware('
 
 Route::get('/dashboard/cars/checkSlug', [DashboardMobilController::class, 'checkSlug'])->middleware('auth');
 Route::resource('/dashboard/cars', DashboardMobilController::class)->middleware('auth');
+
+Route::resource('/dashboard/galleries', DashboardGalleryController::class)->middleware('auth');

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mobil;
 use App\Http\Requests\StoreMobilRequest;
 use App\Http\Requests\UpdateMobilRequest;
+use App\Models\Galery;
 
 class MobilController extends Controller
 {
@@ -17,7 +18,8 @@ class MobilController extends Controller
     {
         return view('home', [
             'title' => 'Home',
-            'home' => Mobil::latest()->get()
+            'home' => Mobil::latest()->get(),
+            'galleries' => Galery::latest()->get()
         ]);
     }
 
