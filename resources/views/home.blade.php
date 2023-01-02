@@ -1,5 +1,3 @@
-{{-- <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/owl.theme.default.css"> --}}
 @extends('layouts.main')
 
 @section('container')
@@ -212,10 +210,3 @@
         @include('partials.contact')
     </section>
 @endsection
-{{-- <div class="container mt-4 mb-5">
-    <div class="owl-carousel galleries owl-theme">
-        @foreach ($galleries as $gallery)
-            <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}" class="img-thumbnail" style="width: 300px"></div>
-        @endforeach
-    </div>
-</div> --}}
