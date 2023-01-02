@@ -12,13 +12,19 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/cars*') ? 'active' : '' }}" href="/dashboard/cars">
-                    <span data-feather="file-text"></span> My Car
+                    <span data-feather="truck"></span> My Car
                 </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link {{ Request::is('dashboard/galleries*') ? 'active' : '' }}" href="/dashboard/galleries">
                     <span data-feather="grid"></span>
                     Galleries
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link {{ Request::is('dashboard/brosurs*') ? 'active' : '' }}" href="/dashboard/brosurs/">
+                    <span data-feather="file-text"></span>
+                    Brosur
                 </a>
             </li>
         </ul>

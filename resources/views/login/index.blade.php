@@ -1,7 +1,7 @@
 @extends('layouts.main')
 
 @section('container')
-    <div class="container">
+    <div class="container" style="margin-top: 100px">
         <div class="row justify-content-center">
             <div class="col-md-4">
                 @if (session('success'))
@@ -33,7 +33,7 @@
                             <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
                             <label for="password">Password</label>
                         </div>
-                        <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                        <button class="w-100 btn btn-lg btn-primary" type="submit" style="margin-bottom: 800px">Login</button>
                     </form>
                     {{-- <small class="d-block text-center mt-3">Not Registered? <a href="/register">Register Now!</a></small> --}}
                 </main>

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DashboardBrosurController;
 use App\Http\Controllers\DashboardGalleryController;
 use App\Http\Controllers\DashboardMobilController;
 use App\Http\Controllers\DashboardUserController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\GaleryController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MobilController;
 use App\Http\Controllers\RegisterController;
+use App\Models\Brosur;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,3 +44,5 @@ Route::get('/dashboard/cars/checkSlug', [DashboardMobilController::class, 'check
 Route::resource('/dashboard/cars', DashboardMobilController::class)->middleware('auth');
 
 Route::resource('/dashboard/galleries', DashboardGalleryController::class)->middleware('auth');
+
+Route::resource('/dashboard/brosurs', DashboardBrosurController::class)->middleware('auth');

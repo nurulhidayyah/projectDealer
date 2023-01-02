@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Mobil;
-use App\Http\Requests\StoreMobilRequest;
-use App\Http\Requests\UpdateMobilRequest;
 use App\Models\Brosur;
-use App\Models\Galery;
+use App\Http\Requests\StoreBrosurRequest;
+use App\Http\Requests\UpdateBrosurRequest;
 
-class MobilController extends Controller
+class BrosurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +15,7 @@ class MobilController extends Controller
      */
     public function index()
     {
-        return view('home', [
-            'title' => 'Home',
-            'home' => Mobil::latest()->get(),
-            'galleries' => Galery::latest()->get(),
-            'brosurs' => Brosur::latest()->get()
-        ]);
+        //
     }
 
     /**
@@ -38,10 +31,10 @@ class MobilController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreMobilRequest  $request
+     * @param  \App\Http\Requests\StoreBrosurRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreMobilRequest $request)
+    public function store(StoreBrosurRequest $request)
     {
         //
     }
@@ -49,10 +42,10 @@ class MobilController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Mobil  $mobil
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function show(Mobil $mobil)
+    public function show(Brosur $brosur)
     {
         //
     }
@@ -60,10 +53,10 @@ class MobilController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Mobil  $mobil
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function edit(Mobil $mobil)
+    public function edit(Brosur $brosur)
     {
         //
     }
@@ -71,11 +64,11 @@ class MobilController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateMobilRequest  $request
-     * @param  \App\Models\Mobil  $mobil
+     * @param  \App\Http\Requests\UpdateBrosurRequest  $request
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateMobilRequest $request, Mobil $mobil)
+    public function update(UpdateBrosurRequest $request, Brosur $brosur)
     {
         //
     }
@@ -83,10 +76,10 @@ class MobilController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Mobil  $mobil
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Mobil $mobil)
+    public function destroy(Brosur $brosur)
     {
         //
     }

@@ -60,9 +60,5 @@
             </div>
             <button type="submit" class="btn btn-primary">Update</button>
         </form>
-        <form target="blank" action="{{ asset('storage/' . auth()->user()->brosur) }}" class="mb-5">
-            @csrf
-            <button type="submit" class="btn btn-outline-success">Lihat Brosur</button>
-        </form>
     </div>
 @endsection

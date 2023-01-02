@@ -4,7 +4,7 @@
 
 @section('container')
     <!-- Slide -->
-    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" style="margin-top: 76px">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
                 aria-current="true" aria-label="Slide 1"></button>
@@ -44,7 +44,7 @@
                 <div class="card">
                     <div class="card-body text-center">
 
-                        <img src="img/dreams.png" alt="">
+                        <img class="img-fluid" src="img/dreams.png" alt="">
                         <h4> <strong>Apakah Anda Sedang Mencari Mobil Honda Baru Dan Mengalami Salah Satu Kendala Berikut
                                 ?</strong><br><br><br></h4>
 
@@ -54,7 +54,7 @@
                         <h5>Bagaimana cara <strong>Claim Asuransi</strong> dan berapa biaya perawatan mobil ? <br><br><br>
                         </h5>
 
-                        <h4> <strong>HondaSerang.com Solusinya </strong></h4>
+                        <h4> <strong>hondamobilserangbanten.com Solusinya </strong></h4>
 
                         <!-- card 1 -->
 
@@ -78,7 +78,7 @@
                             </div>
                             <div class="col">
                                 <div class="card1">
-                                    <img src="img//kredit.png" class="card-img-top" alt="...">
+                                    <img src="img/kredit.png" class="card-img-top" alt="...">
                                     <div class="card-body">
                                         <h5 class="card-title">DP Murah & Angsuran Ringan</h5>
                                     </div>
@@ -103,9 +103,9 @@
 
 
     <!-- section 2 -->
-    <section class="bg-dark text-light p-5 mt-5">
+    <section class="bg-dark text-light p-5 mt-5" id="product">
         <div class="row">
-            <div class="text-center">
+            <div class="text-center mt-5">
                 <div class="p-4 border bg-secondary bg-gradient text-center">
                     <h1>PRODUCT & PRICE 2023</h1>
                 </div>
@@ -135,10 +135,9 @@
                                         <strong class="mt-auto">
                                             <h3 class="card-title1 text-dark fw-bold fs-2">{{ $homes->title }}</h3>
                                         </strong>
-                                        <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondaserang.com"
-                                            class="btn btn-danger d-block py-4 px-5 fw-bold fs-4 mt-auto"
-                                            style="width: 100%" target="blank">Harga
-                                            Rp {{ $homes->harga }}</a>
+                                        <a href="https://api.whatsapp.com/send?phone=6289602675711&text=HALLO Robbi, saya mau tanya tanya harga mobil honda, saya dapat informasi dari website hondamobilserangbanten.com"
+                                            class="btn btn-danger d-block p-4 fw-bold fs-4">Harga Rp
+                                            {{ $homes->harga }}</a>
                                     </div>
                                 </div>
                             </div>
@@ -149,13 +148,12 @@
                 @endif
 
                 <div class="text-button mt-4">
-                    {{-- <form target="blank" action="{{ asset('storage/' . auth()->user()->brosur) }}">
-                        @csrf
-                        <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
-                    </form> --}}
-                    <form action="https://drive.google.com/file/d/1FvqMhnJ6SVGLD5bFSTiomKOpfRW4DuOH/view">
-                        <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
-                    </form>
+                    @foreach ($brosurs as $brosur)
+                        <form target="blank" action="{{ asset('storage/' . $brosur->brosur) }}">
+                            @csrf
+                            <button type="submit" class="btn btn-outline-success">Dapatkan Brosur Honda</button>
+                        </form>
+                    @endforeach
                 </div>
 
             </div>
@@ -165,25 +163,30 @@
     <!-- section 3 -->
     <section class="bg-secondary mt-5 p-1" id="gallery">
 
-        <div class="row justify-content-center">
-            <div class="mt-5 border bg-light bg-gradient text-center col-md-4 ">
-                <h1 class="fs-1 fw-bold">GALERI PELANGGAN</h1>
+        <div class="container justify-content-center">
+            <div class="col">
+                <div class="border bg-light bg-gradient text-center" style="margin-top: 80px">
+                    <h1 class="fs-1 fw-bold">GALERI PELANGGAN</h1>
+                </div>
             </div>
-        </div>
-        <div class="row text-center text-light mt-4">
-            <h1 class="fs-3">Real Testimoni Pelanggan hondamobilserangbanten.com</h1>
+            <div class="col text-center text-light mt-4">
+                <h1 class="fs-3">Real Testimoni Pelanggan hondamobilserangbanten.com</h1>
+            </div>
         </div>
 
         <!-- Galeri Pelanggan-->
 
 
         <div class="container mt-4 mb-5">
-            <div class="owl-carousel galleries owl-theme">
+            <div class="owl-carousel owl-theme">
                 @foreach ($galleries as $gallery)
-                    <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}" class="img-thumbnail" style="width: 300px"></div>
+                    <div class="item img-thumbnail">
+                        <img src="{{ asset('storage/' . $gallery->image) }}">
+                    </div>
                 @endforeach
             </div>
         </div>
+
         <script>
             $('.owl-carousel').owlCarousel({
                 loop: true,
@@ -205,7 +208,14 @@
     </section>
 
     <!-- Galeri Pelanggan-->
-    <section class="bg-dark bg-gradient mt-5">
+    <section class="bg-dark bg-gradient">
         @include('partials.contact')
     </section>
 @endsection
+{{-- <div class="container mt-4 mb-5">
+    <div class="owl-carousel galleries owl-theme">
+        @foreach ($galleries as $gallery)
+            <div class="item"><img src="{{ asset('storage/' . $gallery->image) }}" class="img-thumbnail" style="width: 300px"></div>
+        @endforeach
+    </div>
+</div> --}}

@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
+use App\Models\Brosur;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 
-class DashboardUserController extends Controller
+class DashboardBrosurController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,9 @@ class DashboardUserController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard.brosur.index', [
+            'brosurs' => Brosur::latest()->get()
+        ]);
     }
 
     /**
@@ -43,10 +44,10 @@ class DashboardUserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function show(User $user)
+    public function show(Brosur $brosur)
     {
         //
     }
@@ -54,58 +55,51 @@ class DashboardUserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(Brosur $brosur)
     {
-        //
+        return view('dashboard.brosur.edit', [
+            'brosur' => $brosur
+        ]);
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, Brosur $brosur)
     {
         $rules = [
-            'name' => 'required|max:255',
-            'password' => 'required|min:5|max:255'
+            'brosur' => 'required'
         ];
-        if ($request->username != $user->username) {
-            $rules['username'] = 'required|unique:mobils';
-        }
-        if ($request->email != $user->email) {
-            $rules['email'] = 'required|unique:mobils';
-        }
 
         $validatedData = $request->validate($rules);
 
-        // if ($request->file('brosur')) {
-        //     if($request->oldBrosur){
-        //         Storage::delete($request->oldBrosur);
-        //     }
-        //     $validatedData['brosur'] = $request->file('brosur')->store('car-brosur');
-        // }
+        if ($request->file('brosur')) {
+            if($request->oldBrosur){
+                Storage::delete($request->oldBrosur);
+            }
+            $validatedData['brosur'] = $request->file('brosur')->store('car-brosur');
+        }
 
-        $validatedData['password'] = Hash::make($validatedData['password']);
-
-        User::where('id', $user->id)
+        Brosur::where('id', $brosur->id)
             ->update($validatedData);
 
-        return redirect('dashboard')->with('success', 'Data has been updated!');
+        return redirect('dashboard/brosurs')->with('success', 'Data has been updated!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\User  $user
+     * @param  \App\Models\Brosur  $brosur
      * @return \Illuminate\Http\Response
      */
-    public function destroy(User $user)
+    public function destroy(Brosur $brosur)
     {
         //
     }
